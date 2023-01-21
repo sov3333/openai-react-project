@@ -6,6 +6,14 @@ Project #2 for GA SEI - React app with OpenAI API.
 
 A description of your project. Explain what is the project about and what is the use for it.
 
+### Setting Up
+
+1. `npx create-react-app client` in root folder to create react client in new folder.
+
+2. `npm start` in root folder to create server `package.json` in root folder.
+
+3. `cd client` and `npm start` to run server.
+
 ### Technical Used
 What technologies you used that helped you build this project. 
 
