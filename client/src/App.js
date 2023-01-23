@@ -1,6 +1,6 @@
+import { useEffect, useState } from 'react';
 import './normal.css'; // https://necolas.github.io/normalize.css/8.0.1/normalize.css
 import './App.css';
-import { useState } from 'react';
 
 function App() {
 
@@ -13,9 +13,21 @@ function App() {
     message: "I want to use ChatGPT today."
   }
   ]);
+  const [models, setModels] = useState([]);
+  const [currentModel, setCurrentModel] = useState("davinci");
+
+  useEffect(() => {
+    getEngines();
+  }, [])
 
   const clearChat = () => {
     setChatLog([]);
+  }
+
+  const getEngines = () => {
+    fetch("http://localhost:3080/models")
+    .then(res => res.json())
+    .then(data => setModels(data.models))
   }
 
   const handleSubmit = async (e) => {
@@ -34,7 +46,8 @@ function App() {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        message: messages
+        message: messages,
+        currentModel
       })
     });
     const data = await response.json();
@@ -47,6 +60,17 @@ function App() {
         <div className="sidemenu-button" onClick={clearChat}>
           <span>+ </span>
           New chat
+        </div>
+        <div className="models">
+          <select onChange={(e) => {
+            setCurrentModel(e.target.value)
+          }}>
+            {models.map((model, index) => (
+              <option key={model.id} value={model.id}>
+                {model.id}
+              </option>
+            ))}
+          </select>
         </div>
       </aside>
       <section className="chatbox">
