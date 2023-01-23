@@ -14,6 +14,10 @@ A description of your project. Explain what is the project about and what is the
 
 3. `cd client` and `npm start` to run server.
 
+### Setting Up Backend
+
+1. `npm install express cors body-parser morgan openai dotenv --save`.
+
 ### Technical Used
 What technologies you used that helped you build this project. 
 
