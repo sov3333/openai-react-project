@@ -1,10 +1,8 @@
 # OpenAI React Project
 
-Project #2 for GA SEI - React app with OpenAI API.
-
 ## Description
 
-A description of your project. Explain what is the project about and what is the use for it.
+ChatGPT clone made with React and OpenAI API.
 
 ### Setting Up
 
