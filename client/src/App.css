@@ -8,8 +8,27 @@
 }
 
 .sidemenu {
-  width: 208px;
+  width: 240px;
   background-color: #202123;
+}
+
+.sidemenu-button {
+  padding: 0.75rem;
+  margin: 8px;
+  font-size: 0.9rem;
+  border: 1px solid #4d4d4f;
+  border-radius: 5px;
+  text-align: left;
+  transition: ease 0.25s all;
+}
+
+.sidemenu-button:hover {
+  background-color:  rgba(255,255,255,0.1);
+}
+
+.sidemenu-buton span {
+  padding-left: 6px;
+  padding-right: 12px;
 }
 
 .chatbox {
